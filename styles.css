@@ -1238,6 +1238,11 @@ body {
   background: #f6fafd;
   box-shadow: 0 2px 8px rgba(78,176,249,0.10);
 }
+img.img-fluid.position-absolute.bottom-0.start-0{
+  max-height: 441px;
+  left: 26vw !important;
+  bottom:0;
+}
 .criteria-cards-outer {
   flex: 1.5;
   min-width: 350px;
