@@ -154,4 +154,20 @@ document.querySelectorAll('.benefits-arrow').forEach(btn => {
     const walk = (x - startX) * 1.2;
     carousel.scrollLeft = scrollLeft - walk;
   });
-})(); 
+})();
+
+// Custom FAQ accordion toggle
+(function() {
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const questionRow = item.querySelector('.faq-question-row');
+    questionRow.addEventListener('click', function() {
+      item.classList.toggle('open');
+    });
+    item.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        item.classList.toggle('open');
+      }
+    });
+  });
+})();
