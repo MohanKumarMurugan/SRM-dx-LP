@@ -110,7 +110,41 @@ body, * {
   background: linear-gradient(90deg, #0b7de1, #4db6f9);
   color: #fff;
 }
+.nav-links {
+  display: flex;
+  background: rgba(255,255,255,0.7);
+  border-radius: 50px;
+  border: 2px solid rgba(248,248,248,0.91);
+  padding: 18px 20px;
+  gap: 25px;
+  font-weight: 500;
+}
 
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #0077b6;
+}
+
+.book-now {
+  background-color: white;
+  border: 2px solid #0077b6;
+  color: #0077b6;
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.book-now:hover {
+  background-color: #0077b6;
+  color: white;
+}
 /* Main section */
 .main-section {
   display: flex;
@@ -379,7 +413,7 @@ body, * {
 }
 
 .navbar-logo {
-  width: 60px;
+  width: 150px;
   height: auto;
   max-width: 100%;
   display: block;
@@ -932,7 +966,7 @@ body, * {
   grid-template-columns: repeat(3, 1fr);
   gap: 1.1rem 1.5rem;
   font-size: 1.18rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 .service-features div {
   display: flex;
@@ -953,10 +987,10 @@ body, * {
   min-width: 180px;
 }
 .service-card-img img {
-  width: 220px;
+  width: 270px;
   max-width: 100%;
   border-radius: 24px;
-  background: #f6fafd;
+  background: #fff;
   box-shadow: 0 2px 8px rgba(78,176,249,0.10);
 }
 @media (max-width: 1100px) {
@@ -1190,7 +1224,7 @@ body, * {
   align-items: flex-start;
   justify-content: flex-start;
   padding-top: 1.5rem;
-  padding-left: 1.5rem;
+  padding-left: 3.5rem;
 }
 .criteria-left h2 {
   font-size: 2.8rem;
@@ -1248,6 +1282,7 @@ img.img-fluid.position-absolute.bottom-0.start-0{
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
+  padding-right: 1.5rem;
 }
 .criteria-cards {
   background: #fff;
@@ -1259,6 +1294,7 @@ img.img-fluid.position-absolute.bottom-0.start-0{
   gap: 1.5rem;
   width: 100%;
   max-width: 480px;
+  
 }
 .criteria-card {
   display: flex;
@@ -1273,22 +1309,22 @@ img.img-fluid.position-absolute.bottom-0.start-0{
   margin-bottom: 0;
 }
 .criteria-card-icon {
-  width: 54px;
-  height: 54px;
+  width: 60px;
+  height: 60px;
   border-radius: 16px;
   background: #ffa726;
   margin-right: 0.7rem;
   flex-shrink: 0;
 }
 .criteria-card-title {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 500;
   color: #222;
   margin-bottom: 0.3rem;
 }
 .criteria-card-desc {
   color: #666;
-  font-size: 1.05rem;
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.5;
 }
@@ -1396,12 +1432,12 @@ img.img-fluid.position-absolute.bottom-0.start-0{
 }
 .benefits-carousel {
   display: flex;
-  gap: 1.5rem;
+  gap: 32px;
   overflow-x: auto;
   scroll-behavior: smooth;
   padding: 0.5rem 0;
   width: 100%;
-  max-width: 1187px;
+  max-width: 1240px;
   scrollbar-width: none; /* Firefox */
 }
 .benefits-carousel::-webkit-scrollbar {
@@ -1412,11 +1448,12 @@ img.img-fluid.position-absolute.bottom-0.start-0{
   display: none !important;
 }
 .benefit-card {
-  flex: 0 0 24%;
-  min-width: 220px;
-  max-width: 260px;
+  flex: 0 0 295px;
+  width: 295px;
+  height: 252px;
   background: #f7f7f7;
-  border-radius: 18px;
+  border-radius: 20px;
+  opacity: 1;
   box-shadow: 0 2px 8px rgba(78,176,249,0.07);
   padding: 2.2rem 1.2rem 1.2rem 1.2rem;
   text-align: center;
@@ -1426,42 +1463,40 @@ img.img-fluid.position-absolute.bottom-0.start-0{
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  height: 140px;
   transition: box-shadow 0.2s;
 }
 .benefit-card:not(:last-child) {
   margin-right: 0.5rem;
 }
-@media (max-width: 1100px) {
+@media (max-width: 1300px) {
   .benefits-carousel {
-    max-width: 98vw;
+    max-width: 99vw;
+    gap: 20px;
   }
   .benefit-card {
-    min-width: 180px;
-    max-width: 200px;
-    font-size: 1rem;
-    height: 110px;
+    flex: 0 0 240px;
+    width: 240px;
+    height: 200px;
   }
 }
-@media (max-width: 700px) {
-  .benefits-header h2 {
-    font-size: 1.3rem;
-  }
+@media (max-width: 900px) {
   .benefit-card {
-    min-width: 140px;
-    max-width: 160px;
+    flex: 0 0 180px;
+    width: 180px;
+    height: 140px;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .benefit-card {
+    flex: 0 0 140px;
+    width: 140px;
+    height: 100px;
     font-size: 0.95rem;
-    height: 80px;
     padding: 1rem 0.5rem 0.5rem 0.5rem;
   }
-  .benefits-arrow {
-    width: 36px;
-    height: 36px;
-    font-size: 1.1rem;
-  }
-  .benefits-arrows-top {
-    gap: 0.3rem;
-    margin-bottom: 0.3rem;
+  .benefits-carousel {
+    gap: 12px;
   }
 }
 
@@ -1490,7 +1525,7 @@ img.img-fluid.position-absolute.bottom-0.start-0{
 
 .who-we-are-illustration {
   position: relative;
-  background: #eaf6ff;
+  background: #fff;
   border-radius: 32px;
   padding: 32px 24px;
   width: 320px;
@@ -1501,7 +1536,7 @@ img.img-fluid.position-absolute.bottom-0.start-0{
 }
 
 .who-we-are-doctor-img {
-  width: 220px;
+  width: 350px;
   height: auto;
   z-index: 1;
   position: relative;
@@ -2179,6 +2214,8 @@ body {
   overflow: hidden;
   box-shadow: 0 -2px 16px rgba(33,150,243,0.07);
   height: 283px;
+  margin-left: 24px;
+  margin-right: 24px;
 }
 .footer-inner {
   display: flex;
@@ -2194,11 +2231,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-width: 180px;
+  min-width: 272px;
   margin-top: 8px;
 }
 .footer-logo {
-  width: 80px;
+  width: 250px;
   height: auto;
   margin-bottom: 8px;
 }
@@ -2342,4 +2379,11 @@ body {
 }
 .footer-bottom {
   padding-bottom: 15px;
+}
+
+.testimonial-quote img {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  vertical-align: middle;
 }
