@@ -1601,7 +1601,7 @@ img.img-fluid.position-absolute.bottom-0.start-0 {
 }
 
 .benefits-arrows-top {
-  display: flex;
+  display: none;
   justify-content: flex-end;
   gap: 0.7rem;
   margin-bottom: 0.7rem;
@@ -1674,6 +1674,10 @@ img.img-fluid.position-absolute.bottom-0.start-0 {
 
 .benefit-card:not(:last-child) {
   margin-right: 0.5rem;
+}
+
+.why-card.h-100.p-4.rounded-4.bg-light.d-flex.flex-column.gap-2.shadow-sm {
+  height: 205px !important;
 }
 
 @media (max-width: 1300px) {
@@ -1963,19 +1967,30 @@ img.img-fluid.position-absolute.bottom-0.start-0 {
 }
 
 @media (max-width: 600px) {
+  .join-network-section{
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    margin: 40px 0 0 0;
+  }
   .join-network-inner {
     padding: 18px 4vw 12px 4vw;
     border-radius: 14px;
+    padding-bottom: 0px;
+    height: 64vh;
   }
 
   .join-network-content h2 {
-    font-size: 1.3rem;
+    font-size: 2rem;
   }
 
   .join-network-img {
-    width: 160px;
+    width: 80px;
     height: 160px;
-    top: -10px;
+    top: 30px;
   }
 }
 
@@ -2186,7 +2201,7 @@ section {
 
 @media (max-width: 600px) {
   .process-title {
-    font-size: 1.3rem;
+    font-size: 2rem;
   }
 
   .process-subtitle {
@@ -2374,7 +2389,7 @@ section {
 
 @media (max-width: 700px) {
   .testimonials-title {
-    font-size: 1.3rem;
+    font-size: 2rem;
   }
 
   .testimonial-card {
@@ -2790,7 +2805,7 @@ body {
     padding: 32px 0 40px 0;
   }
   .faq-title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 24px;
   }
   .faq-list {
