@@ -3044,3 +3044,73 @@ body {
     color: #666;
   }
 }
+
+/* Franchise Criteria Section Styles */
+.franchise-criteria-bg {
+  background: #ECF7FB;
+}
+
+.franchise-criteria-minheight {
+  min-height: 400px;
+}
+
+.franchise-criteria-img {
+  max-height: 450px;
+  left: 0;
+  bottom: 0;
+}
+
+.criteria-card-group-custom {
+  background: #fff;
+  border: 2.5px solid #2da8ff;
+  border-radius: 28px;
+  max-width: 480px;
+}
+
+.criteria-card-group-padding {
+  padding-right: 0px;
+  padding-left: 50px;
+}
+
+/* Responsive Styles */
+@media (max-width: 991.98px) {
+  .criteria-card-group-padding {
+    padding-left: 0;
+  }
+  
+  .criteria-card-group-custom {
+    width: 404px !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .franchise-criteria-img {
+    position: static !important;
+    display: block;
+    margin: 1rem auto 0 auto;
+    max-width: 120px;
+    max-height: 180px;
+  }
+  
+  .franchise-criteria-minheight {
+    min-height: unset !important;
+  }
+  
+  .criteria-card-group-custom {
+    width: 100% !important;
+    max-width: 404px !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .franchise-criteria-img {
+    display: none;
+    max-width: 80px;
+    max-height: 120px;
+  }
+  
+  .criteria-card-group-custom {
+    width: 100% !important;
+    max-width: 404px !important;
+  }
+}
