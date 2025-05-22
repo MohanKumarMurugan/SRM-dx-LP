@@ -2858,3 +2858,152 @@ body {
     padding-right: 10px !important;
   }
 }
+
+@media (min-width: 992px) {
+  .franchise-criteria-bg {
+    background: #ECF7FB;
+  }
+  .franchise-criteria-minheight {
+    min-height: 400px;
+  }
+  .franchise-criteria-img {
+    max-height: 450px;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+  }
+  #franchise-criteria h2 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+  }
+  #franchise-criteria p {
+    max-width: 420px;
+    margin-bottom: 2rem;
+    font-size: 1.15rem;
+    color: #444;
+  }
+  #franchise-criteria .btn-primary {
+    border-radius: 16px;
+    background: linear-gradient(90deg, #2da8ff, #0056b3);
+    border: none;
+    padding: 0.7rem 2.2rem;
+    margin-bottom: 2rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(33,150,243,0.10);
+  }
+  .criteria-card-group {
+    width: 100%;
+    padding: 2.2rem 2.2rem 2.2rem 2.2rem;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 4px 24px rgba(78,176,249,0.10);
+    border: 2.5px solid #2da8ff;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .criteria-card-group-custom {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+  }
+  .criteria-card {
+    background: #f7f7f7;
+    margin-bottom: 0;
+    border-radius: 1.1rem;
+    padding: 1.3rem 1.7rem 1.3rem 1.7rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    box-shadow: 0 2px 8px rgba(78,176,249,0.07);
+  }
+  .criteria-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    background: #ff9800;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.2rem;
+  }
+  .criteria-card .fw-semibold {
+    font-size: 1.18rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    color: #222;
+  }
+  .criteria-card .text-secondary {
+    font-size: 1.02rem;
+    color: #666;
+  }
+  .criteria-card-group-padding {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+  #why-choose .why-choose-container {
+    border: 3px solid #2da8ff;
+    border-radius: 32px;
+    background: #fff;
+    height: 486px;
+    position: relative;
+  }
+  .why-choose-watermark {
+    z-index: 0;
+    opacity: 0.08;
+    background: url('images/watermark.png') center/contain no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .why-choose-bg-img h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+  .why-choose-bg-img .btn-primary {
+    border-radius: 16px;
+    background: linear-gradient(90deg, #2da8ff, #0056b3);
+    border: none;
+    font-size: 1.15rem;
+    font-weight: 600;
+    padding: 0.7rem 2.2rem;
+    box-shadow: 0 2px 8px rgba(33,150,243,0.10);
+  }
+  .why-card {
+    background: #f7f7f7;
+    border-radius: 1.1rem;
+    padding: 1.3rem 1.7rem;
+    box-shadow: 0 2px 8px rgba(78,176,249,0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    height: 100%;
+  }
+  .why-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.2rem;
+  }
+  .why-card .fw-semibold {
+    font-size: 1.18rem;
+    font-weight: 700;
+    color: #222;
+  }
+  .why-card .text-secondary {
+    font-size: 1.02rem;
+    color: #666;
+  }
+}
