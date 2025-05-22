@@ -156,18 +156,197 @@ document.querySelectorAll('.benefits-arrow').forEach(btn => {
   });
 })();
 
-// Custom FAQ accordion toggle
+// FAQ Accordion Toggle
 (function() {
-  document.querySelectorAll('.faq-item').forEach(item => {
-    const questionRow = item.querySelector('.faq-question-row');
-    questionRow.addEventListener('click', function() {
-      item.classList.toggle('open');
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    item.addEventListener('click', function(e) {
+      // Close all other items
+      faqItems.forEach(i => { if (i !== item) i.classList.remove('active'); });
+      // Toggle this one
+      item.classList.toggle('active');
     });
+    // Keyboard accessibility
     item.addEventListener('keydown', function(e) {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        item.classList.toggle('open');
+        item.click();
       }
     });
   });
 })();
+
+// Benefits Carousel Functionality
+const benefitsCarousel = document.getElementById('benefits-carousel');
+const benefitsLeftArrow = document.querySelector('.benefits-arrow.left');
+const benefitsRightArrow = document.querySelector('.benefits-arrow.right');
+
+function getBenefitScrollAmount() {
+    const card = benefitsCarousel.querySelector('.benefit-card');
+    if (!card) return 0;
+    if (window.innerWidth <= 600) {
+        return card.offsetWidth + 12;
+    } else {
+        return card.offsetWidth + 32;
+    }
+}
+
+if (benefitsLeftArrow && benefitsRightArrow && benefitsCarousel) {
+    benefitsLeftArrow.addEventListener('click', () => {
+        benefitsCarousel.scrollBy({
+            left: -getBenefitScrollAmount(),
+            behavior: 'smooth'
+        });
+    });
+
+    benefitsRightArrow.addEventListener('click', () => {
+        benefitsCarousel.scrollBy({
+            left: getBenefitScrollAmount(),
+            behavior: 'smooth'
+        });
+    });
+}
+
+// Testimonials Carousel Functionality
+const testimonialsCarousel = document.getElementById('testimonials-carousel');
+const testimonialsLeftArrow = document.querySelector('.testimonials-arrow.left');
+const testimonialsRightArrow = document.querySelector('.testimonials-arrow.right');
+
+function getTestimonialScrollAmount() {
+    const card = testimonialsCarousel.querySelector('.testimonial-card');
+    if (!card) return 0;
+    if (window.innerWidth <= 600) {
+        return card.offsetWidth + 12;
+    } else {
+        return card.offsetWidth + 32;
+    }
+}
+
+if (testimonialsLeftArrow && testimonialsRightArrow && testimonialsCarousel) {
+    testimonialsLeftArrow.addEventListener('click', () => {
+        testimonialsCarousel.scrollBy({
+            left: -getTestimonialScrollAmount(),
+            behavior: 'smooth'
+        });
+    });
+
+    testimonialsRightArrow.addEventListener('click', () => {
+        testimonialsCarousel.scrollBy({
+            left: getTestimonialScrollAmount(),
+            behavior: 'smooth'
+        });
+    });
+}
+
+// Smooth scroll for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Form validation for appointment form
+const appointmentForm = document.querySelector('.appointment-form');
+if (appointmentForm) {
+    appointmentForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const inputs = appointmentForm.querySelectorAll('input[required]');
+        let isValid = true;
+
+        inputs.forEach(input => {
+            if (!input.value.trim()) {
+                isValid = false;
+                input.style.borderColor = '#ff4444';
+            } else {
+                input.style.borderColor = '#4eb0f9';
+            }
+        });
+
+        if (isValid) {
+            // Here you would typically send the form data to your server
+            alert('Appointment request submitted successfully!');
+            appointmentForm.reset();
+        } else {
+            alert('Please fill in all required fields.');
+        }
+    });
+}
+
+// Add input field labels and placeholders
+const appointmentFields = document.querySelector('.appointment-fields');
+if (appointmentFields) {
+    const fieldLabels = [
+        'Full Name',
+        'Phone Number',
+        'Email Address',
+        'Preferred Date',
+        'Preferred Time',
+        'Test Type'
+    ];
+
+    const inputs = appointmentFields.querySelectorAll('input');
+    inputs.forEach((input, index) => {
+        input.placeholder = fieldLabels[index];
+        input.setAttribute('aria-label', fieldLabels[index]);
+    });
+}
+
+// Add loading state to buttons
+document.querySelectorAll('.btn').forEach(button => {
+    button.addEventListener('click', function() {
+        if (!this.classList.contains('benefits-arrow') && 
+            !this.classList.contains('testimonials-arrow')) {
+            this.style.opacity = '0.7';
+            setTimeout(() => {
+                this.style.opacity = '1';
+            }, 200);
+        }
+    });
+});
+
+// Add hover effects for benefit cards
+const benefitCards = document.querySelectorAll('.benefit-card');
+benefitCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-5px)';
+        card.style.boxShadow = '0 4px 16px rgba(78,176,249,0.15)';
+    });
+
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
+        card.style.boxShadow = '0 2px 8px rgba(78,176,249,0.07)';
+    });
+});
+
+// Add scroll reveal animation
+const revealElements = document.querySelectorAll('.service-card-main, .why-choose-card, .criteria-card, .benefit-card, .testimonial-card');
+
+const revealOnScroll = () => {
+    revealElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementTop < windowHeight - 100) {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+        }
+    });
+};
+
+// Set initial styles for reveal elements
+revealElements.forEach(element => {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(20px)';
+    element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+});
+
+// Add scroll event listener
+window.addEventListener('scroll', revealOnScroll);
+// Initial check for elements in view
+revealOnScroll();
