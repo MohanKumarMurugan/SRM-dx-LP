@@ -6,14 +6,17 @@ body,
 }
 
 /* Navbar Styles */
-.custom-navbar {
-  border-bottom: 1.5px solid #e6e6e6;
-  background: #fff;
-  z-index: 10;
+.navbar .btn-book {
+	background-color: #2da8ff;
+	color: white;
+	border-radius: 8px;
+	padding: 8px 25px;
+	font-weight: 600;
 }
 
-.navbar-brand {
-  gap: 0.7rem !important;
+.navbar .btn-book:hover {
+	background-color: #1a6fcc;
+	color: white;
 }
 
 .brand-text {
